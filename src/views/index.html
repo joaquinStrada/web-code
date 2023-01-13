@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Code</title>
+    <link rel="stylesheet" href="./fonts/css/all.min.css">
+    <link rel="stylesheet" href="./fonts/Roboto.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <form class="app" id="app">
+        <div class="row row-url">
+            <input 
+                type="text"
+                class="input-url"
+                id="input-url"
+                placeholder="URL"
+                autocomplete="off"
+            >
+            <button class="btn-scan-url" id="btn-scan-url">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Scanear Web
+            </button>
+        </div>
+        <div class="row row-error">
+            <p class="txt-input-error" id="txt-input-error"></p>
+        </div>
+        <div class="row row-content">
+            <div class="col col-editor">
+                <aside class="sidebar-editor" id="sidebar-editor">
+                    <span id="btn-menu">
+                        <i class="fa-solid fa-bars btn-menu"></i>
+                    </span>
+                    <nav class="explorer-files">
+                        <ul>
+                            <li class="title">
+                                <h3 class="btn-assets">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                    <i class="fa-solid fa-folder"></i>
+                                    Assets
+                                </h3>
+                                <ul class="content-assets">
+                                    <li class="file">
+                                        <h3>
+                                            <i class="fa-regular fa-image"></i>
+                                            Mifoto.jpg
+                                        </h3>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="title">
+                                <h3 class="btn-css">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                    <i class="fa-solid fa-folder"></i>
+                                    Css
+                                </h3>
+                                <ul class="content-css">
+                                    <li class="file">
+                                        <h3>
+                                            <i class="fa-brands fa-css3"></i>
+                                            styles.css
+                                        </h3>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="title">
+                                <h3 class="btn-assets">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                    <i class="fa-solid fa-folder"></i>
+                                    Js
+                                </h3>
+                                <ul class="content-js">
+                                    <li class="file">
+                                        <h3>
+                                            <i class="fa-brands fa-square-js"></i>
+                                            index.js
+                                        </h3>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="file">
+                                <h3>
+                                    <i class="fa-brands fa-html5"></i>
+                                    index.html
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+                <textarea id="editor" rows="2" class="editor"></textarea>
+            </div>
+            <div class="col col-web">
+                <iframe class="iframe-web" id="iframe-web"></iframe>
+            </div>
+        </div>
+    </form>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "web-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}

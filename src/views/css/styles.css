@@ -1,0 +1,262 @@
+/*-----------------------------------*/
+/* estilos generales */
+/*-----------------------------------*/
+:root {
+    --separacion: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #DEDEDE;
+    color: #000;
+}
+
+/*-----------------------------------*/
+/* estilos de la app */
+/*-----------------------------------*/
+.app {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding: 10px 0;
+}
+
+/*-----------------------------------*/
+/* estilos de las filas */
+/*-----------------------------------*/
+.app .row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app .row-url {
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.app .row-error {
+    display: block;
+    margin-bottom: var(--separacion);
+}
+
+.app .row-content {
+    height: calc(100% - 64px - var(--separacion));
+}
+
+/*-----------------------------------*/
+/* estilos de la row-url */
+/*-----------------------------------*/
+.app .row-url .input-url {
+    display: block;
+    width: calc(80% - 5px);
+    height: 100%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    transition: all .3s ease;
+    outline: none;
+    margin-right: 5px;
+}
+
+.app .row-url .input-url:focus {
+    border: 2px solid #0074D9;
+}
+
+.app .row-url .btn-scan-url {
+    display: block;
+    width: calc(20% - 5px);
+    height: 100%;
+    background: #0074D9;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    transition: all .3s ease;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.app .row-url .btn-scan-url i {
+    margin-right: 10px;
+}
+
+.app .row-url .btn-scan-url:hover {
+    background: rgba(0, 116, 217, .5);
+}
+
+.app .row-url .btn-scan-url:active {
+    transform: scale(.95);
+}
+
+/*-----------------------------------*/
+/* estilos de la row-error */
+/*-----------------------------------*/
+.app .row-error .txt-input-error {
+    display: block;
+    width: 100%;
+    color: #f00;
+    padding: 0 10px;
+    transition: all .3s ease;
+    transform: scaleY(0);
+}
+
+.app .row-error .txt-input-error.is-active {
+    transform: scaleY(1);
+}
+
+/*-----------------------------------*/
+/* estilos de la row-content */
+/*-----------------------------------*/
+.app .row-content .col {
+    width: calc(50% - 5px);
+}
+
+.app .row-content .col-editor {
+    margin-right: 5px;
+}
+
+.app .row-content .col-web {
+    margin-left: 5px;
+}
+
+.app .row-content .col-web .iframe-web {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: none;
+}
+
+.app .row-content .col-editor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.app .row-content .col-editor .editor {
+    display: block;
+    width: 75%;
+    height: 100%;
+    padding: 10px;
+    resize: none;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-left: none;
+    transition: all .3S ease;
+    outline: none;
+    top: 0;
+    left: 0;
+}
+
+.app .row-content .col-editor .editor:focus {
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-left: none;
+}
+
+.app .row-content .col-editor .sidebar-editor.is-compressed + .editor {
+    width: 93.75%;
+}
+
+/*-----------------------------------*/
+/* estilos del sidebar-editor */
+/*-----------------------------------*/
+.app .row-content .col-editor .sidebar-editor {
+    display: block;
+    width: 25%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: auto;
+    transition: all .3S ease;
+    z-index: 99;
+}
+
+.app .row-content .col-editor .sidebar-editor .btn-menu {
+    display: block;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files,
+.app .row-content .col-editor .sidebar-editor .explorer-files ul,
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .title {
+    display: block;
+    width: 100%;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .title h3,
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .file h3 {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 1.17rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .title h3 i,
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .file h3 i {
+    line-height: 1.17rem;
+    margin-right: 10px;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .title h3:hover,
+.app .row-content .col-editor .sidebar-editor .explorer-files ul .file h3:hover {
+    background: #f3f3f3;
+    color: #000;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files > ul .title > ul {
+    transition: all .3s ease;
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.app .row-content .col-editor .sidebar-editor .explorer-files > ul .title > ul > li {
+    padding-left: 20px;
+}
+
+/*-----------------------------------*/
+/* estilos de los ul del sidebar-editor cuando estan comprimidos */
+/*-----------------------------------*/
+.app .row-content .col-editor .sidebar-editor .explorer-files > ul .title.is-compressed > ul {
+    height: 0;
+    transform: scaleY(0);
+}
+
+/*-----------------------------------*/
+/* estilos del sidebar-editor cuando esta comprimido */
+/*-----------------------------------*/
+.app .row-content .col-editor .sidebar-editor.is-compressed {
+    width: 6.25%;
+    overflow: hidden;
+}
+
+.app .row-content .col-editor .sidebar-editor.is-compressed .explorer-files > ul .title > h3 {
+    display: none;
+}
+
+.app .row-content .col-editor .sidebar-editor.is-compressed .explorer-files > ul .title > ul > li {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.app .row-content .col-editor .sidebar-editor.is-compressed .explorer-files > ul .title > ul > li > h3,
+.app .row-content .col-editor .sidebar-editor.is-compressed .explorer-files > ul .file {
+    display: none;
+}
